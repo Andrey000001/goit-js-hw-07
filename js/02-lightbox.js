@@ -19,16 +19,8 @@ function createELGallery(galleryItems) {
   gallery.insertAdjacentHTML("beforeend", markup);
 }
 
-let lightbox = new SimpleLightbox(".gallery a", {
+new SimpleLightbox(".gallery a", {
   captions: true,
   captionsData: "alt",
   captionDelay: 250,
-});
-
-gallery.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (e.target.nodeName !== "IMG") {
-    return;
-  }
-  lightbox.open();
 });
