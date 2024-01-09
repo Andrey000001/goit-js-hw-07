@@ -19,8 +19,9 @@ function createELGallery(galleryItems) {
   gallery.insertAdjacentHTML("beforeend", markup);
 }
 
-new SimpleLightbox(".gallery a", {
+const lightbox = new SimpleLightbox(".gallery__link", {
   captions: true,
   captionsData: "alt",
+  captionPosition: "bottom",
   captionDelay: 250,
 });

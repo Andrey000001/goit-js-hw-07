@@ -20,11 +20,9 @@ function createElGallery(galleryItems) {
   </a>
   </li>`
     )
-    .join(' ');
-  }
-  gallery.innerHTML = galleryItemsEl;
-
-
+    .join(" ");
+}
+gallery.innerHTML = galleryItemsEl;
 
 function openModalClick(e) {
   e.preventDefault();
@@ -32,20 +30,20 @@ function openModalClick(e) {
   if (target.nodeName !== "IMG") {
     return;
   }
-    const instance = basicLightbox.create(
+  const instance = basicLightbox.create(
     `
         <img src="${target.dataset.source}" style="border-radius: 4px;"  alt="${target.description}">
         `,
     {
       onShow: (instance) => {
-        window.addEventListener("keydown",keyDownHandler);
+        window.addEventListener("keydown", keyDownHandler);
       },
       onClose: (instance) => {
-        window.removeEventListener("keydown",keyDownHandler);
+        window.removeEventListener("keydown", keyDownHandler);
       },
     }
-    );
-    instance.show();
+  );
+  instance.show();
 
   function keyDownHandler(evt) {
     if (evt.code === "Escape") {
@@ -54,4 +52,3 @@ function openModalClick(e) {
     }
   }
 }
-
